@@ -1,8 +1,6 @@
 package d20201216;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -13,7 +11,15 @@ import java.util.stream.Collectors;
  * @date 2020-12-16
  */
 public class T290WordPattern {
-    public boolean wordPattern(String pattern, String s) {
+    /**
+     * 两映射判断是否重复  2s
+     * https://leetcode-cn.com/problems/word-pattern/
+     *
+     * @param pattern 单词规则
+     * @param s       单词列表
+     * @return 是否匹配
+     */
+    public boolean wordPattern0(String pattern, String s) {
         List<Integer> collect = pattern.chars().boxed().collect(Collectors.toList());
         Map<Integer, String> map1 = new HashMap<>();
         Map<String, Integer> map2 = new HashMap<>();
@@ -31,6 +37,40 @@ public class T290WordPattern {
             map2.putIfAbsent(string, key);
             if (!map2.get(string).equals(key)) {
                 return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * 两映射判断是否重复  1s
+     * https://leetcode-cn.com/problems/word-pattern/
+     *
+     * @param pattern 单词规则
+     * @param s       单词列表
+     * @return 是否匹配
+     */
+    public boolean wordPattern1(String pattern, String s) {
+        String[] strings = s.split(" ");
+        if (strings.length != pattern.length()) {
+            return false;
+        }
+        char[] patterns = pattern.toCharArray();
+        Map<Character, String> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
+        for (int i = 0; i < patterns.length; i++) {
+            Character c = patterns[i];
+            String value = strings[i];
+            if (map.containsKey(c)) {
+                if (!map.get(c).equals(value)) {
+                    return false;
+                }
+            } else {
+                if (set.contains(value)) {
+                    return false;
+                }
+                map.put(c, value);
+                set.add(value);
             }
         }
         return true;
