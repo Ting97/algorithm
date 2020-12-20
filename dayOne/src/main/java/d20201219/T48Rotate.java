@@ -22,11 +22,12 @@ public class T48Rotate {
                 ints[ints.length - i - 1] = t;
             }
         }
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length - i; j++) {
+        int length = matrix.length;
+        for (int i = 0; i < length; i++) {
+            for (int j = 0; j < length - i; j++) {
                 int t = matrix[i][j];
-                matrix[i][j] = matrix[matrix.length - 1 - j][matrix.length - 1 - i];
-                matrix[matrix.length - 1 - j][matrix.length - 1 - i] = t;
+                matrix[i][j] = matrix[length - 1 - j][length - 1 - i];
+                matrix[length - 1 - j][length - 1 - i] = t;
             }
         }
     }
