@@ -2,8 +2,6 @@ package d20201220;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @author Chen Liting
@@ -14,29 +12,25 @@ import java.util.Set;
  */
 public class T316RemoveDuplicateLetters {
 
-    // TODO: 2020/12/20 opt
+    private static final char A = 'a';
+
     public String removeDuplicateLetters(String s) {
         char[] chars = s.toCharArray();
         int[] nums = new int[26];
         Deque<Character> stack = new ArrayDeque<>();
         for (char aChar : chars) {
-            nums[aChar - 'a']++;
+            nums[aChar - A]++;
         }
         stack.push(chars[0]);
-        nums[chars[0] - 'a']--;
+        nums[chars[0] - A]--;
         for (int i = 1; i < chars.length; i++) {
             if (!stack.contains(chars[i])) {
-                while (!stack.isEmpty()) {
-                    Character peek = stack.peek();
-                    if (peek > chars[i] && nums[peek - 'a'] >= 1) {
-                        stack.pop();
-                        continue;
-                    }
-                    break;
+                for (Character peek = stack.peek(); !stack.isEmpty() && peek > chars[i] && nums[peek - A] >= 1; peek = stack.peek()) {
+                    stack.pop();
                 }
                 stack.push(chars[i]);
             }
-            nums[chars[i] - 'a']--;
+            nums[chars[i] - A]--;
         }
         return stack.stream().collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).reverse().toString();
     }
@@ -66,30 +60,5 @@ public class T316RemoveDuplicateLetters {
             sb.append(number.substring(number.length() - 2));
         }
         return sb.toString();
-    }
-
-    public int maximumUniqueSubarray(int[] nums) {
-        Set<Integer> set = new HashSet<>();
-        int max = 0;
-        for (int i = 0, j = 0; i < nums.length; i++) {
-            if (set.contains(nums[i])) {
-
-                Integer k = set.stream().reduce(Integer::sum).get();
-                max  = Math.max(max, k);
-                set.clear();
-                set.add(nums[i-1]);
-            } else {
-                set.add(nums[i]);
-                Integer k = set.stream().reduce(Integer::sum).get();
-                max  = Math.max(max, k);
-            }
-        }
-        return max;
-    }
-    public int maxResult(int[] nums, int k) {
-        int res = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-        }
-        return res;
     }
 }
