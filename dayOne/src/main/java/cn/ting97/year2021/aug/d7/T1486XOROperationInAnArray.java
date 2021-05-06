@@ -1,4 +1,4 @@
-package cn.ting97.year2021.aug.d7.T1486;
+package cn.ting97.year2021.aug.d7;
 
 /**
  * @author Chen Liting
