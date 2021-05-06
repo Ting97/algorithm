@@ -21,7 +21,7 @@ public class T740DeleteAndEarn {
      * <p>
      * 1. 利用桶思想进行统计每个数的个数
      * 2. 相邻桶不可同时取
-     * 3. max = Math(first + nums[i] * i, second);
+     * 3. max = Math(first + count[i] * i, second);
      *
      * @param nums 整数数组
      * @return 最大点数
