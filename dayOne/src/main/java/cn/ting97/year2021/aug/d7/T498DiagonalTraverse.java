@@ -22,14 +22,16 @@ public class T498DiagonalTraverse {
         int x, y;
         for (int i = 0; i < m + n - 1; ++i) {
             if (i % 2 == 0) {
-                y = Math.min(i, m - 1);
-                x = i - Math.min(i, m - 1);
+                int min = Math.min(i, m - 1);
+                y = min;
+                x = i - min;
                 while (y >= 0 && x < n) {
                     ans[index++] = mat[y--][x++];
                 }
             } else {
-                x = Math.min(i, n - 1);
-                y = i - Math.min(i, n - 1);
+                int min = Math.min(i, n - 1);
+                x = min;
+                y = i - min;
                 while (x >= 0 && y < m) {
                     ans[index++] = mat[y++][x--];
                 }
