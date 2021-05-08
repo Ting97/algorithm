@@ -20,6 +20,6 @@ public class T28ImplementStrStr {
      * @return
      */
     public int strStr(String haystack, String needle) {
-return 0;
+        return haystack.indexOf(needle);
     }
 }
