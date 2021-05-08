@@ -14,8 +14,23 @@ public class T27RemoveElement {
      * 不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组。
      * <p>
      * 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
+     * <p>
+     * 1. 原地替换
      */
     public int removeElement(int[] nums, int val) {
-        return 0;
+        int i = 0;
+        int j = nums.length - 1;
+        for (; i <= j; ++i) {
+            if (nums[i] == val) {
+                swap(nums, i--, j--);
+            }
+        }
+        return i;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
