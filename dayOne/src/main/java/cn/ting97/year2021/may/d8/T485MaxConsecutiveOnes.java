@@ -11,8 +11,8 @@ public class T485MaxConsecutiveOnes {
     /**
      * 给定一个二进制数组， 计算其中最大连续 1 的个数。
      *
-     * @param nums
-     * @return
+     * @param nums 二进制数组
+     * @return 连续1个数
      */
     public int findMaxConsecutiveOnes(int[] nums) {
         return 0;

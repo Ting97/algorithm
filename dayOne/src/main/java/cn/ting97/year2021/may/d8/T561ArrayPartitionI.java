@@ -10,10 +10,11 @@ package cn.ting97.year2021.may.d8;
 public class T561ArrayPartitionI {
     /**
      * 给定长度为 2n 的整数数组 nums ，你的任务是将这些数分成 n 对, 例如 (a1, b1), (a2, b2), ..., (an, bn) ，使得从 1 到 n 的 min(ai, bi) 总和最大。
-     *
+     * <p>
      * 返回该 最大总和 。
-     * @param nums
-     * @return
+     *
+     * @param nums 数组
+     * @return 最大和
      */
     public int arrayPairSum(int[] nums) {
 return 0;

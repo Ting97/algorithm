@@ -15,9 +15,9 @@ public class T1723FindMinimumTimeToFinishAllJobs {
      * <p>
      * 返回分配方案中尽可能 最小 的 最大工作时间 。
      *
-     * @param jobs
-     * @param k
-     * @return
+     * @param jobs 工作
+     * @param k    工人个数
+     * @return 最小的最大工作时间
      */
     public int minimumTimeRequired(int[] jobs, int k) {
         return 0;

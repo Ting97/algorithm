@@ -13,9 +13,9 @@ public class T209MinimumSizeSubarraySum {
      * <p>
      * 找出该数组中满足其和 ≥ target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
      *
-     * @param target
-     * @param nums
-     * @return
+     * @param target 目标长度
+     * @param nums   数组
+     * @return 长度
      */
     public int minSubArrayLen(int target, int[] nums) {
         return 0;
