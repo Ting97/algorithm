@@ -39,4 +39,35 @@ public class T14LongestCommonPrefix {
         }
         return sb.toString();
     }
+
+    /**
+     * 二分
+     *
+     * @param strs 字符串数组
+     * @return 最长公共前缀
+     */
+    public String longestCommonPrefix1(String[] strs) {
+        int left = 0;
+        int right = Integer.MAX_VALUE;
+        for (String s : strs) {
+            right = Math.min(right, s.length());
+        }
+        while (left < right) {
+            int mid = left + ((right - left + 1) >> 1);
+            String t = strs[0].substring(0, mid);
+            boolean flag = true;
+            for (String s : strs) {
+                if (!s.substring(0, mid).equals(t)) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                left = mid;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return strs[0].substring(0, left);
+    }
 }
