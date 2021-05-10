@@ -16,11 +16,22 @@ public class T151ReverseWordsInAString {
      * 无空格字符构成一个 单词 。
      * 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
      * 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
+     * <p>
+     * 1. 使用split函数分割字符串
+     * 2. 倒序组装
      *
      * @param s 翻转字符
      * @return 目标字符
      */
     public String reverseWords(String s) {
-        return "";
+        String[] strs = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (int i = strs.length - 1; i >= 0; i--) {
+            if (strs[i].length() != 0) {
+                sb.append(strs[i]).append(" ");
+            }
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
     }
 }
