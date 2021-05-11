@@ -15,6 +15,25 @@ public class T485MaxConsecutiveOnes {
      * @return 连续1个数
      */
     public int findMaxConsecutiveOnes(int[] nums) {
-        return 0;
+        int ans = 0;
+        int sum = 0;
+        for (int num : nums) {
+            sum = num == 1 ? sum + 1 : 0;
+            ans = Math.max(ans, sum);
+        }
+        return ans;
+    }
+
+    public int findMaxConsecutiveOnes1(int[] nums) {
+        int n = nums.length, res = 0;
+        for (int i = 0; i < n; i++) {
+            int j = i;
+            while (j < n && nums[j] == 1) {
+                j++;
+            }
+            res = Math.max(res, j - i);
+            i = j;
+        }
+        return res;
     }
 }
