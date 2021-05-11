@@ -1,10 +1,12 @@
 package cn.ting97.year2021.may.d8;
 
+import java.util.Arrays;
+
 /**
  * @author Chen Liting
  * @version 1.0.0
  * @className T561ArrayPartitionI
- * @Description  数组拆分 I
+ * @Description 数组拆分 I
  * @date 2021-05-08
  */
 public class T561ArrayPartitionI {
@@ -17,6 +19,11 @@ public class T561ArrayPartitionI {
      * @return 最大和
      */
     public int arrayPairSum(int[] nums) {
-return 0;
+        Arrays.sort(nums);
+        int ans = 0;
+        for (int i = 0; i < nums.length; i += 2) {
+            ans += nums[i];
+        }
+        return ans;
     }
 }
