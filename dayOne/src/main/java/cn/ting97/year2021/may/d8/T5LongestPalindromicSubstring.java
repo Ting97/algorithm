@@ -31,9 +31,8 @@ public class T5LongestPalindromicSubstring {
             for (int j = n - 1; j > i && length > max; --j, --length) {
                 int iIndex = i;
                 int jIndex = j;
-                while (iIndex < jIndex && chars[iIndex++] == chars[jIndex--]) {
-                }
-                if (iIndex >= jIndex && chars[iIndex - 1] == chars[jIndex + 1] && max < length) {
+                while (iIndex < jIndex && chars[iIndex++] == chars[jIndex--]);
+                if (iIndex >= jIndex && chars[iIndex - 1] == chars[jIndex + 1]) {
                     max = length;
                     sb.delete(0, sb.length());
                     for (int k = i; k <= j; ++k) {
