@@ -1,10 +1,12 @@
+package cn.ting97.year2021;
+
 import java.util.LinkedList;
 import java.util.List;
 
 /**
  * @author Chen Liting
  * @version 1.0.0
- * @className T1696MaxResult
+ * @className cn.ting97.year2021.T1696MaxResult
  * @Description
  * @date 2020-12-21
  */

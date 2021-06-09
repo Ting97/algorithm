@@ -1,10 +1,12 @@
+package cn.ting97.year2021;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
 /**
  * @author Chen Liting
  * @version 1.0.0
- * @className T49GroupAnagrams
+ * @className cn.ting97.year2021.T49GroupAnagrams
  * @Description leetCode20201214每日一题49
  * @date 2020-12-14
  */
